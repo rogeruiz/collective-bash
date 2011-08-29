@@ -66,7 +66,7 @@ then
 		curl $js -o $domain.$name
 		
 	done
-else # the use didn't say 'y' to the question so let's quit
+else # the user didn't say 'y' to the question so let's quit
 	echo "Exiting..."
 	exit
 fi
