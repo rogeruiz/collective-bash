@@ -4,7 +4,7 @@
 # hi@rogeruiz.com
 # 2011
 
-# This is a simple script for downloading JavaScript files from a URL
+# This is a simple script for downloading CSS files from a URL
 # Currently this script can handle absolute paths, root relative paths,
 # and relative paths. I haven't had much of a chance to test it extensively.
 # any bug reports, or code critiques, are welcome.
