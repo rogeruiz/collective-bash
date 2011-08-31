@@ -15,7 +15,7 @@ read -a URL
 
 # search the main index file for javascript files
 # and store them inside of an array
-jsArr=(`curl -L $URL | grep -P -o '(?<=src=").*js'`)
+jsArr=(`curl -L $URL | grep -P -o '(?<=src=").*\.js'`)
 
 # display names & how many files were found
 for js in ${jsArr[@]}
