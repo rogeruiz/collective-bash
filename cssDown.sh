@@ -15,7 +15,7 @@ read -a URL
 
 # search the main index file for javascript files
 # and store them inside of an array
-cssArr=(`curl -L $URL | grep -P -o '(?<=href=").*?css'`)
+cssArr=(`curl -L $URL | grep -P -o '(?<=href=").*?\.css'`)
 
 if [[ ${#cssArr[@]} == "0" ]]
 then
