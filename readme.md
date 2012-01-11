@@ -1,5 +1,29 @@
 # Custom Bash Scripts
-## by Roger Steve Ruiz
+### by Roger Steve Ruiz
 
+	This is a collection of files scripts I have written for myself or found.
+	Enjoy the collection.
 
-	This is a collection of bash scripts I have written for myself. Enjoy.
+## Bash
+	.bash_profile
+
+## Vim
+	.vimrc
+	.vim/
+		colors/
+			solarized.vim
+		syntax/
+			coffee.vim
+			scss.vim
+
+## Screen
+	.screenrc
+
+## Git
+	.git-completion
+	
+## Diver
+	diver/
+		jsDown.sh
+		cssDown.sh
+		diver.sh
