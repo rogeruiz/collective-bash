@@ -1,4 +1,4 @@
-PATH=$PATH:~/Applications:/opt/local/bin:/opt/local/sbin
+PATH=~/Applications:/opt/local/bin:$PATH
 
 # alias for quickly listing a directory
 alias ll='ls -al -G'
@@ -6,18 +6,33 @@ alias ll='ls -al -G'
 # alias for quick DNS cache flushing
 alias fc='sudo dscacheutil -flushcache'
 
+# alias for getting the machine's ip address into the clipboard
+alias getip="ipconfig getpacket en0 | grep -oPe '(?<=yiaddr\s=\s)[\d\.]+' | pbcopy"
+
+# alias for searching SVN projects
+# bah! gotta make this a script instead
+# alias sslamp="curl -# http://192.168.1.102/projects | grep -oP '(?<=>)?`$1`(?:.+)?(?=<)'"
+
 # alias for quickly editing hosts file
-alias hostess='sudo vim /etc/hosts'
+alias ho='bbedit /etc/hosts'
+alias vho='bbedit /opt/local/apache2/conf/extra/httpd-vhosts.conf'
 
-# alias(es) for un/loading apache2
-alias mamp='sudo port load apache2'
-alias un_mamp='sudo port unload apache2'
+# alias for un/loading MAMP
+alias mamp="sudo port load apache2"
+alias un_mamp="sudo port unload apache2"
 
-# alias for loading local dochub documentation
-alias dochub='node ~/Code/dochub/web.js'
-
-# alias for using colorsvn instead of the default svn
+# alias for svn to use colorsvn
 alias svn='colorsvn'
+
+# alias for common git commands
+alias gs='git status'
+alias ga='git add'
+alias gb='git branch'
+alias gco='git checkout'
+alias grH='git reset --hard'
+alias gcf='git checkout -- '
+alias gc='git commit'
+alias glp='git log --graph --pretty=format:"The author of %h was %an, %ar, and they said \"%s\""'
 
 # enable the git bash completion commands
 source ~/.git-completion
@@ -45,10 +60,9 @@ MAGENTA=$(tput setaf 5)
 CYAN=$(tput setaf 6)
 WHITE=$(tput setaf 7)
 BRIGHT=$(tput setaf bold)
-NORMAL=$(tput setaf sgr0)
-BLINK=$(tput setaf blink)
-REVERSE=$(tput setaf smso)
-UNDERLINE=$(tput setaf smul)
+NORMAL=$(tput setaf 7)
+UNDERLINE=$(tput sgr 0 1)
+RESET=$(tput sgr0)
 
 # set prompt to show current working directory and git branch name, if it exists
 
@@ -60,11 +74,22 @@ UNDERLINE=$(tput setaf smul)
 # return the prompt prefix for the second line
 function set_prefix {
 	BRANCH=`__git_ps1`
-	if [[ -z BRANCH ]]; then
+	if [[ -z $BRANCH ]]; then
 		echo "${NORMAL}o"
 	else
 		echo "${UNDERLINE}+"
 	fi
 }
 
-PS1='${MAGENTA}\u${WHITE} in ${GREEN}\w${WHITE}${BLUE}`__git_ps1 " on %s"`${WHITE}\r\n`set_prefix`${NORMAL}${CYAN}\033[s\033[60C (`date "+%a, %b, %d"`)\033[u${WHITE}' 
+PS1='${MAGENTA}\u${WHITE} in ${GREEN}\w${WHITE}${BLUE}`__git_ps1 " on %s"`${NORMAL}\r\n`set_prefix`${RESET} ${YELLOW}\033[s\033[60C (`date "+%a, %b, %d"`)\033[u${WHITE}' 
+
+
+#
+# e (escape)
+# [ (open square bracket)
+# ? (question mark)
+# 7 (seven)
+# l (el - lowercase L)
+# c (tells echo to suppress the newline; this is optional)
+#
+#echo -e "e[?7lc"
