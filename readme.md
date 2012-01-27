@@ -1,4 +1,4 @@
-# Custom Bash Scripts
+# Collective Bash
 ### by Roger Steve Ruiz
 
 	This is a collection of files & scripts I have written or found for myself.
