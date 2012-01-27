@@ -6,6 +6,7 @@
 
 ## Bash
 	.bash_profile
+	.bashrc
 
 ## Vim
 	.vimrc
@@ -21,6 +22,7 @@
 
 ## Git
 	.git-completion
+	.gitconfig
 	
 ## Diver
 	diver/
