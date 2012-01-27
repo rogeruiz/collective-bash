@@ -1,0 +1,17 @@
+[user]
+	name = Roger Steve Ruiz
+	email = roger.ruiz@rokkan.com
+[color]
+	ui = true
+[core]
+	editor = bbedit -w	
+	quotepath = false
+[github]
+	user = rogeruiz
+	token = # github token here
+[diff]
+  tool = "bbdiff"
+[difftool]
+  prompt = true
+[difftool "bbdiff"]
+  cmd = /usr/local/bin/bbdiff --wait --resume "$LOCAL" "$REMOTE"
