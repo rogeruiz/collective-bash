@@ -25,16 +25,6 @@ alias un_mamp="sudo port unload apache2"
 # alias for svn to use colorsvn
 alias svn='colorsvn'
 
-# alias for common git commands
-# alias gs='git status'
-# alias ga='git add'
-# alias gb='git branch'
-# alias gco='git checkout'
-# alias grH='git reset --hard'
-# alias gcf='git checkout -- '
-# alias gc='git commit'
-# alias glp='git log --graph --pretty=format:"The author of %h was %an, %ar, and they said \"%s\""'
-
 # enable the git bash completion commands
 source ~/.git-completion
 
@@ -76,13 +66,11 @@ RESET=$(tput sgr0)
 function set_prefix {
 	BRANCH=`__git_ps1`
 	if [[ -z $BRANCH ]]; then
-		echo "${NORMAL}o"
+		echo "${RESET}o"
 	else
 		echo "${UNDERLINE}+"
 	fi
 }
 
-PS1='${MAGENTA}\u${WHITE} in ${GREEN}\w${WHITE}${BLUE}`__git_ps1 " on %s"`${NORMAL}\r\n`set_prefix`${RESET} ${YELLOW}\033[s\033[60C (`date "+%a, %b, %d"`)\033[u${WHITE}' 
+PS1='${MAGENTA}\u${RESET} in ${GREEN}\w${RESET}${BLUE}`__git_ps1 " on %s"`${NORMAL}\r\n`set_prefix`${RESET} ${YELLOW}\033[s\033[60C (`date "+%a, %b, %d"`)\033[u${RESET}' 
 
-
-#[ -s "/Users/rogeruiz/.scm_breeze/scm_breeze.sh" ] && . "/Users/rogeruiz/.scm_breeze/scm_breeze.sh"
