@@ -1,8 +1,7 @@
-
 PATH=~/Applications:/opt/local/bin:$PATH
 
 # alias for quickly listing a directory
-alias ll='ls -al -G'
+alias l='ls -al -G'
 
 # alias for quick DNS cache flushing
 alias fc='sudo dscacheutil -flushcache'
