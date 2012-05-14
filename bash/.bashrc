@@ -1,4 +1,3 @@
-
 PATH=~/Applications:/opt/local/bin:$PATH
 
 # alias for quickly listing a directory
@@ -6,9 +5,6 @@ alias l='ls -GF'
 
 # alias for quickly listing a directory
 alias ll='ls -al -GF'
-
-# ford alias for concat CSS
-alias buildcss='ant -file public/assets/build/build.xml buildcss'
 
 # alias for quick DNS cache flushing
 alias fc='sudo dscacheutil -flushcache'
