@@ -1,17 +1,31 @@
 [user]
-	name = Roger Steve Ruiz
-	email = roger.ruiz@rokkan.com
+  name = Roger Steve Ruiz
+  email = roger.ruiz@rokkan.com
 [color]
-	ui = true
+  ui = true
 [core]
-	editor = bbedit -w	
-	quotepath = false
+  editor = bbedit -w  
+  quotepath = false
 [github]
-	user = rogeruiz
-	token = # github token here
+  user = rogeruiz
+  token = # github token here
 [diff]
   tool = "bbdiff"
 [difftool]
   prompt = true
 [difftool "bbdiff"]
   cmd = /usr/local/bin/bbdiff --wait --resume "$LOCAL" "$REMOTE"
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  unstage = reset HEAD
+  pl = pull
+  ps = push
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset by %an' --abbrev-commit --date=relative
+  save = stash save
+  sh = stash list
+  mr = merge
+  fall = fetch --all
