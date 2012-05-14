@@ -2,7 +2,13 @@
 PATH=~/Applications:/opt/local/bin:$PATH
 
 # alias for quickly listing a directory
-alias ll='ls -al -G'
+alias l='ls -GF'
+
+# alias for quickly listing a directory
+alias ll='ls -al -GF'
+
+# ford alias for concat CSS
+alias buildcss='ant -file public/assets/build/build.xml buildcss'
 
 # alias for quick DNS cache flushing
 alias fc='sudo dscacheutil -flushcache'
@@ -23,10 +29,28 @@ alias mamp="sudo port load apache2"
 alias un_mamp="sudo port unload apache2"
 
 # alias for svn to use colorsvn
-alias svn='colorsvn'
+# alias svn='colorsvn'
+
+# alias for common git commands
+# alias gs='git status'
+# alias ga='git add'
+# alias gb='git branch'
+# alias gco='git checkout'
+# alias grH='git reset --hard'
+# alias gcf='git checkout -- '
+# alias gc='git commit'
+# alias glp='git log --graph --pretty=format:"The author of %h was %an, %ar, and they said \"%s\""'
 
 # enable the git bash completion commands
-source ~/.git-completion
+if [ -f ~/.git-completion ]; then
+  source ~/.git-completion
+fi
+
+# Bash Completion for SVN
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
+
 
 # enable the git unstaged indicators - set to a non-empty value
 GIT_PS1_SHOWDIRTYSTATE="."
@@ -54,6 +78,7 @@ BRIGHT=$(tput setaf bold)
 NORMAL=$(tput setaf 7)
 UNDERLINE=$(tput sgr 0 1)
 RESET=$(tput sgr0)
+
 
 # set prompt to show current working directory and git branch name, if it exists
 
