@@ -8,9 +8,9 @@ alias l='ls -GF'
 alias ll='ls -al -GF'
 
 # alias for watching haml files in the current directory
-# this is dependant on the having the haml_watch.rb file in the repo
+# this is dependant on the having the haml_watch.rb file in the repo or in your $PATH
 # available @ https://gist.github.com/2720418
-alias watch_haml='ruby haml_watch.rb ./'
+alias watch_haml='ruby ~/Applications/haml_watch.rb ./'
 
 # alias for quick DNS cache flushing
 alias fc='sudo dscacheutil -flushcache'
