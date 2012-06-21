@@ -7,16 +7,17 @@ alias l='ls -GF'
 # alias for quickly listing a directory
 alias ll='ls -al -GF'
 
-# alias for watching haml files in the current directory
-# this is dependant on the having the haml_watch.rb file in the repo or in your $PATH
-# available @ https://gist.github.com/2720418
-alias watch_haml='ruby ~/Applications/haml_watch.rb ./'
+# alias for going back a directory
+alias ..='cd ..'
+
+# alias for going back two directory
+alias ...='cd ../..'
 
 # alias for quick DNS cache flushing
 alias fc='sudo dscacheutil -flushcache'
 
 # alias for getting the machine's ip address into the clipboard
-alias getip="ipconfig getpacket en0 | grep -oPe '(?<=yiaddr\s=\s)[\d\.]+' | pbcopy"
+# alias getip="ipconfig getpacket en0 | grep -oPe '(?<=yiaddr\s=\s)[\d\.]+' | pbcopy"
 
 # alias for searching SVN projects
 # bah! gotta make this a script instead
@@ -29,19 +30,6 @@ alias vho='bbedit /opt/local/apache2/conf/extra/httpd-vhosts.conf'
 # alias for un/loading MAMP
 alias mamp="sudo port load apache2"
 alias un_mamp="sudo port unload apache2"
-
-# alias for svn to use colorsvn
-# alias svn='colorsvn'
-
-# alias for common git commands
-# alias gs='git status'
-# alias ga='git add'
-# alias gb='git branch'
-# alias gco='git checkout'
-# alias grH='git reset --hard'
-# alias gcf='git checkout -- '
-# alias gc='git commit'
-# alias glp='git log --graph --pretty=format:"The author of %h was %an, %ar, and they said \"%s\""'
 
 # enable the git bash completion commands
 if [ -f ~/.git-completion ]; then
@@ -89,15 +77,7 @@ RESET=$(tput sgr0)
 # this prompt uses the short color codes defined above
 # PS1='${GREEN}\u${BLACK}@${CYAN}\h:${MAGENTA}\w${WHITE}`__git_ps1 " (%s)"`\$ '
 
-# return the prompt prefix for the second line
-function set_prefix {
-	BRANCH=`__git_ps1`
-	if [[ -z $BRANCH ]]; then
-		echo "${RESET}o"
-	else
-		echo "${UNDERLINE}+"
-	fi
-}
 
-PS1='${MAGENTA}\u${RESET} in ${GREEN}\w${RESET}${BLUE}`__git_ps1 " on %s"`${NORMAL}\r\n`set_prefix`${RESET} ${YELLOW}\033[s\033[60C (`date "+%a, %b, %d"`)\033[u${RESET}' 
+# original one is on top
+PS1='${YELLOW}(`date "+%a, %b, %d"`) ${RESET}${MAGENTA}\u${RESET} in ${GREEN}\w${RESET}${BLUE}`__git_ps1 " on %s"`${RESET}\r\n$ '
 
