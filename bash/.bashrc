@@ -71,10 +71,5 @@ RESET=$(tput sgr0)
 
 
 # set prompt to show current working directory and git branch name, if it exists
+PS1='${YELLOW}\u${RESET}\033[4C${RED}\h${RESET}\033[4C${GREEN}\w${RESET}${BLUE}`__git_ps1 "\033[4C%s"`${RESET}\r\n$ '
 
-# this prompt is a green username, black @ symbol, cyan host, magenta current working directory, and white git branch (only shows if you're in a git branch)
-# unstaged and untracked symbols are shown, too (see above)
-# this prompt uses the short color codes defined above
-# PS1='${GREEN}\u${BLACK}@${CYAN}\h:${MAGENTA}\w${WHITE}`__git_ps1 " (%s)"`\$ '
-
-PS1='${YELLOW}(`date "+%a, %b, %d"`) ${RESET}${MAGENTA}\u${RESET} in ${GREEN}\w${RESET}${BLUE}`__git_ps1 " on %s"`${RESET}\r\n$ '
