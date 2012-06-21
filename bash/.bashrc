@@ -77,7 +77,4 @@ RESET=$(tput sgr0)
 # this prompt uses the short color codes defined above
 # PS1='${GREEN}\u${BLACK}@${CYAN}\h:${MAGENTA}\w${WHITE}`__git_ps1 " (%s)"`\$ '
 
-
-# original one is on top
 PS1='${YELLOW}(`date "+%a, %b, %d"`) ${RESET}${MAGENTA}\u${RESET} in ${GREEN}\w${RESET}${BLUE}`__git_ps1 " on %s"`${RESET}\r\n$ '
-

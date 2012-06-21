@@ -8,7 +8,7 @@
   quotepath = false
 [github]
   user = rogeruiz
-  token = # github token here
+  token = # your github token here 
 [diff]
   tool = "bbdiff"
 [difftool]
@@ -29,3 +29,4 @@
   sh = stash list
   mr = merge
   fall = fetch --all
+  terse = log --graph --pretty=format:'The author of %h was %an, %ar, and they said \"%s\"'
