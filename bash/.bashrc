@@ -88,6 +88,5 @@ function set_prefix {
 }
 
 
-# original one is on top
 PS1='`set_prefix`${RESET} ${MAGENTA}\u${RESET} in ${GREEN}\w${RESET}${BLUE}`__git_ps1 " on %s"`${RESET}\r\n$ '
 
