@@ -16,6 +16,9 @@ alias ...='cd ../..'
 # alias for quick DNS cache flushing
 alias fc='sudo dscacheutil -flushcache'
 
+# alias for getting the last two weeks of git logs for the current repo
+alias harvest="git log --since @{2weeks} --date=local --reverse | grep -P 'Author:\srruiz\s<[\w\d@-]+>(\r|\n)Date:[\s]{3}.*$' > ./Timesheet.txt"
+
 # alias for getting the machine's ip address into the clipboard
 # alias getip="ipconfig getpacket en0 | grep -oPe '(?<=yiaddr\s=\s)[\d\.]+' | pbcopy"
 
