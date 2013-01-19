@@ -1,32 +1,36 @@
 [user]
-  name = Roger Steve Ruiz
-  email = roger.ruiz@rokkan.com
+	name = Roger Steve Ruiz
+	email = roger.ruiz@rokkan.com
 [color]
-  ui = true
+	ui = true
 [core]
-  editor = bbedit -w  
-  quotepath = false
+	editor = subl -w  
+	quotepath = false
+	excludesfile = /Users/rogeruiz/.gitignore_global
 [github]
-  user = rogeruiz
-  token = # your github token here 
+	user = rogeruiz
 [diff]
-  tool = "bbdiff"
+	tool = "bbdiff"
 [difftool]
-  prompt = true
+	prompt = true
 [difftool "bbdiff"]
-  cmd = /usr/local/bin/bbdiff --wait --resume "$LOCAL" "$REMOTE"
+	cmd = /usr/local/bin/bbdiff --wait --resume "$LOCAL" "$REMOTE"
 [alias]
-  co = checkout
-  ci = commit
-  st = status
-  br = branch
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  unstage = reset HEAD
-  pl = pull
-  ps = push
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset by %an' --abbrev-commit --date=relative
-  save = stash save
-  sh = stash list
-  mr = merge
-  fall = fetch --all
-  terse = log --graph --pretty=format:'The author of %h was %an, %ar, and they said \"%s\"'
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	fall = fetch --all
+	mr = merge
+	unstage = reset HEAD
+	pl = pull
+	ps = push
+	ls = stash list
+	save = stash save
+	pop = stash pop
+	verbose = log --graph --stat --pretty=format:'The author of %Cblue%h%Creset was %C(yellow)%an%Creset, %C(blue)%ar%Creset, and they said \n%C(yellow)%s\n%C(green)==========================================================\n%b%C(green)==========================================================\n%Creset'
+	# gist = log --format='%C(red)%h%Creset %C(green)%an%Creset - %C(yellow)%s%Creset' --graph
+	gist = log --pretty=format:'%C(red)%h%Creset%C(white)%d %C(green)%an%Creset - %C(yellow)%s %Cgreen(%cr)%Creset' --graph --date=relative
+	continue = rebase --continue
+	url = config --local --get-regexp remote\\.\\.\\*\\.url
+	last = log -1 --graph --stat --pretty=format:'The author of %Cblue%h%Creset was %C(yellow)%an%Creset, %C(blue)%ar%Creset, and they said \n%C(yellow)%s\n%C(green)==========================================================\n%b%C(green)==========================================================\n%Creset'

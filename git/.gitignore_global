@@ -1,0 +1,26 @@
+# Middleman files
+/.bundle
+/build
+
+# Compass / Sass files
+/.sass-cache
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+.svn
+.idea
+
+# Bower components
+components/
+
+# Dropbox files that get included
+.dropbox
+Icon*
+
+# Adobe Asset Files
+*.psd
+*.ai
+*.indd
